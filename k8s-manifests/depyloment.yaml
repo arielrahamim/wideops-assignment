@@ -21,3 +21,6 @@ spec:
         envFrom:
         - configMapRef:
             name: myapp-configmap
+        resources:
+          requests:
+            cpu: 15m

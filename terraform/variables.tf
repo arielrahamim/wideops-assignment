@@ -24,6 +24,14 @@ variable "ingress_rules" {
   type = list(any)
 }
 
+variable "subnets" {
+  type = list(any)
+}
+
+variable "secondary_ranges" {
+  type = map(list(any))
+}
+
 ###################
 ####### GKE #######
 ###################
