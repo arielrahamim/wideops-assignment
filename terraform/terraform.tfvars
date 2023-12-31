@@ -64,20 +64,20 @@ node_pools = [
 
 
 node_pools_oauth_scopes = {
-    all = [
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-      "https://www.googleapis.com/auth/trace.append",
-      "https://www.googleapis.com/auth/service.management.readonly",
-      "https://www.googleapis.com/auth/devstorage.read_only",
-      "https://www.googleapis.com/auth/servicecontrol",
-    ]
-  }
+  all = [
+    "https://www.googleapis.com/auth/logging.write",
+    "https://www.googleapis.com/auth/monitoring",
+    "https://www.googleapis.com/auth/trace.append",
+    "https://www.googleapis.com/auth/service.management.readonly",
+    "https://www.googleapis.com/auth/devstorage.read_only",
+    "https://www.googleapis.com/auth/servicecontrol",
+  ]
+}
 
 #################
 #### COMPUTE ####
 #################
 
-machine_type = "e2-medium"
-image = "ubuntu-2204-jammy-v20231213a"
+machine_type    = "e2-medium"
+image           = "ubuntu-2204-jammy-v20231213a"
 mongo_instances = ["mongo-primary", "mongo-replica", "mongo-arbiter"]

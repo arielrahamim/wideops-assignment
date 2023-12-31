@@ -13,4 +13,3 @@ resource "helm_release" "nginx_ingress_controller" {
   values     = [local.ingress_ValuesOverride]
   depends_on = [module.gke]
 }
-
