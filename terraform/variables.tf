@@ -36,6 +36,10 @@ variable "node_pools" {
   type = list(any)
 }
 
+variable "node_pools_oauth_scopes" {
+  type = map(list(string))
+}
+
 #################
 ##### COMPUTE ###
 #################
@@ -44,3 +48,10 @@ variable "mongo_instances" {
   type = list(string)
 }
 
+variable "machine_type" {
+  type = string
+}
+
+variable "image" {
+  type = string
+}

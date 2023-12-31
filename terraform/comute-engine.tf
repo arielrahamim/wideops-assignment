@@ -1,13 +1,13 @@
 resource "google_compute_instance" "default" {
   for_each                  = toset(var.mongo_instances)
   name                      = each.key
-  machine_type              = "e2-medium"
-  zone                      = "me-west1-a"
+  machine_type              = var.machine_type
+  zone                      = var.zones[0]
   allow_stopping_for_update = true
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-2204-jammy-v20231213a"
+      image = var.image
       labels = {
         my_label = "${each.key}"
       }
@@ -38,7 +38,3 @@ resource "google_compute_instance" "default" {
   sudo systemctl enable mongod
   EOT
 }
-
-# 10.0.0.10 leader
-# 10.0.0.11 replica
-# 10.0.0.09 arbiter
