@@ -15,7 +15,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    subnetwork = "${var.project}-private-subnet"
+    subnetwork = module.gcp-network.subnets_self_links[0]
     network    = module.gcp-network.network_self_link
     access_config {
       // Include this section to give the VM an external IP address
