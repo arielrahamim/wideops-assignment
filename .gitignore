@@ -44,4 +44,3 @@ terraform.rc
 *.cnf
 
 app/node_modules
-app/*.json
